@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Bhargavi!</title>
+    <link rel="icon" type="image/x-icon" href="assets\WhatsApp Image 2024-12-26 at 23.00.55_e01ae89c.jpg">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --primary: #FF61D2;
+            --secondary: #FE9090;
+            --text: #2A2A2A;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        /* Mobile-first navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            padding: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links.show {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1rem;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .nav-links a:active {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+
+        .hamburger {
+            display: block;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            padding: 0.5rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 80px 16px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 20px;
+            width: 100%;
+            margin: 1rem auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            padding: 0 1rem;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Gallery
+        .gallery-container {
+            width: 100%;
+            margin: 1rem auto;
+        }
+
+        .gallery-slider {
+            width: 2828px;
+            height: 2828px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
+
+        /* Memories */
+        .memories-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .memory-content {
+            padding: 1rem;
+        }
+
+        .memory-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cake */
+        .cake-container {
+            font-size: 80px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        /* Balloons */
+        .floating-balloon {
+            font-size: 30px;
+        }
+
+        .confetti {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* Touch-friendly gallery navigation */
+        .gallery-container {
+            width: 100%;
+            margin: 1rem auto;
+            position: relative;
+        }
+
+        .gallery-slider {
+            width: 100%;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 0; /* Remove bottom margin */
+        }
+
+        .gallery-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; /* Prevent image gap */
+        }
+
+        .gallery-nav {
+            position: absolute;
+            bottom: 15px; /* Adjust position to overlay on slider */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px;
+            border-radius: 20px;
+        }
+
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .gallery-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .floating-balloon {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 100;
+            font-size: 40px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .floating-balloon:hover,
+        .floating-balloon:active {
+            transform: scale(1.1);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            50% { 
+                transform: translateY(-20px) rotate(5deg); 
+            }
+        }
+
+        /* Improved touch targets */
+        button, 
+        .nav-links a, 
+        .memory-card,
+        .floating-balloon {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .memories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="hamburger" id="hamburgerBtn">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">🏠 Home</a></li>
+            <li><a href="#about">📖 About</a></li>
+            <li><a href="#gallery">📸 Gallery</a></li>
+            <li><a href="#video">🎥 Video</a></li>
+            <li><a href="#memories">🕰️ Memories</a></li>
+            <li><a href="#countdown">⏰ Countdown</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h1>Happy Birthday Bhargavi! 🎉</h1>
+        <div class="section-content">
+            <div class="cake-container" onclick="blowCake()">
+                <span class="cake">🎂</span>
+            </div>
+            <h2 style="text-align: center;">Click the cake to get a wish! ✨</h2>
+        </div>
+    </section>
+
+    
+
+    <section id="about">
+        <h1>About Bhargavi</h1>
+        <div class="section-content">
+            <p>Bhagee, you are a radiant soul with a heart of gold, and you bring so much joy and warmth to everyone around you. Your infectious laughter and caring nature make every moment spent with you truly special. As we celebrate another year of your amazing journey, I cherish all the countless memories we've shared and look forward to creating many more together.</p>
+            <br>            
+            <p>Here's to celebrating you - an amazing friend, a wonderful person, and someone who makes the world a better place just by being in it! 🌟</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1>Photo Gallery</h1>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+               
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 23.06.15_8956c260.jpg" alt="Birthday Memory 1">
+                </div>
+               
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.08_38b616f6.jpg" alt="Birthday Memory 1">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 22.55.57_e9d452be.jpg" alt="Birthday Memory 3">
+                </div>
+               
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 22.53.58_3120b499.jpg" alt="Birthday Memory 3">
+                </div>
+
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 23.03.16_29cba5de.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.24_f993e3d7.jpg" alt="Birthday Memory 3">
+                </div>
+                 
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.26_c53dd66e.jpg" alt="Birthday Memory 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.11_91a64caa.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.25_7d620421.jpg" alt="Birthday Memory 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.25_924ac913.jpg" alt="Birthday Memory 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.09_713318d6.jpg" alt="Birthday Memory 2">
+                </div>
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.26_abde51ac.jpg" alt="Birthday Memory 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 22.34.21_de642aa0.jpg" alt="Birthday Memory 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.43.28_9da205ad.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 22.40.41_a9df48db.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.54.57_7c854273.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-26 at 23.00.55_e01ae89c.jpg" alt="Birthday Memory 3">
+                </div>
+                
+                
+                <div class="gallery-slide">
+                    <img src="assets\WhatsApp Image 2024-12-25 at 15.55.00_6a0cacc6.jpg" alt="Birthday Memory 3">
+                </div>
+               
+            </div>
+            <div class="gallery-nav" id="galleryNav"></div>
+        </div>
+    </section>
+    <section id="video">
+        <h1>Birthday Video</h1>
+        <div class="section-content">
+                <div style="width:100%;height:0;padding-bottom:56.25%;position:relative;border-radius:15px;overflow:hidden;">
+                    <video 
+                    controls 
+                    style="width:100%;height:100%;border-radius:15px;position:absolute;top:0;left:0;" 
+                    loading="lazy"
+                >
+                    <source src="assets/VID-20241229-WA0092.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="memories">
+        <h1>Special Memories</h1>
+        <div class="memories-grid">
+            <!-- Replace src attributes with your actual image paths -->
+            <div class="memory-card">
+                <img src="assets\memory1.jpg" alt="Memory 1" class="memory-image">
+                <div class="memory-content">
+                    <h3 class="memory-title">First Day of College</h3>
+                    <p>Bhargavi ochina modati roju...evar ra e thikkadi anukunna , papam ochina roje may i come in madam ani adagagane andaru boys okate sari chuse sariki , class motham navvindi andulo nen okadini sorry 🤭</p>
+                </div>
+            </div>
+            <div class="memory-card">
+                <img src="assets\memory2.jpg" alt="Memory 2" class="memory-image">
+                <div class="memory-content">
+                    <h3 class="memory-title">Cheruvu Katta</h3>
+                    <p>Srujana, Srikanth, Bhargavi, and nenu – kalisi choosina cheruvu madhya prashanthi, mana maatala madhya navvulu, and adrustam ki aa sunset backdrop... ee memory na heart lo forever etched untundi. Andharam kalisi aa roju mana stress ni cheruvu lo gurthulu laga vadilesam</p>
+                </div>
+            </div>
+            <div class="memory-card">
+                <img src="assets\WhatsApp Image 2024-12-25 at 15.43.08_38b616f6.jpg" alt="Memory 3" class="memory-image">
+                <div class="memory-content">
+                    <h3 class="memory-title">Birthday Celebration</h3>
+                    <p>Na birthday ni ela plan chesindi ani eppatiki Bhargavi ni adagadame! Cake cut chepinchi, aa moment lo mana andariki navvula madhya oka oka beautiful memory ni create chesindi. A surprise and cake ki vadilesina cream fight – adi life lo na most fun-filled moments lo oka memorable chapter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="countdown">
+        <h1>Next Birthday Countdown</h1>
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: pink; text-align: center; padding: 10px; font-size: 16px; color: #555;">
+        <p>Best Wishes from your bestfriend     <br> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp -Rohith</p>
+    </footer>
+    
+
+    <script>
+          function createFloatingBalloon() {
+            const colors = ['#FF61D2', '#FE9090', '#FFB8E6', '#FF9EBF'];
+            const balloon = document.createElement('div');
+            balloon.className = 'floating-balloon';
+            balloon.innerHTML = '🎈';
+            balloon.style.fontSize = '40px';
+            balloon.style.left = Math.random() * window.innerWidth + 'px';
+            balloon.style.top = window.innerHeight + 'px';
+            balloon.style.animation = `float ${5 + Math.random() * 5}s linear infinite`;
+            document.body.appendChild(balloon);
+
+            // Move balloon upward
+            const speed = 1 + Math.random() * 1;
+            const moveUpward = () => {
+                const top = parseFloat(balloon.style.top);
+                if (top > -50) {
+                    balloon.style.top = (top - speed) + 'px';
+                    requestAnimationFrame(moveUpward);
+                } else {
+                    balloon.remove();
+                }
+            };
+            requestAnimationFrame(moveUpward);
+
+            // Add click handler for popping
+            balloon.addEventListener('click', () => popBalloon(balloon, colors));
+        }
+
+        function popBalloon(balloon, colors) {
+            // Create confetti explosion
+            for (let i = 0; i < 30; i++) {
+                createConfetti(balloon.offsetLeft, balloon.offsetTop, colors);
+            }
+            balloon.remove();
+        }
+
+        function createConfetti(x, y, colors) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = x + 'px';
+            confetti.style.top = y + 'px';
+            document.body.appendChild(confetti);
+
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = 5 + Math.random() * 5;
+            const rotationSpeed = (Math.random() - 0.5) * 20;
+            let rotation = 0;
+            let velocityY = -velocity;
+            const gravity = 0.2;
+
+            function animateConfetti() {
+                const currentX = parseFloat(confetti.style.left);
+                const currentY = parseFloat(confetti.style.top);
+                
+                velocityY += gravity;
+                rotation += rotationSpeed;
+
+                confetti.style.left = (currentX + Math.cos(angle) * velocity) + 'px';
+                confetti.style.top = (currentY + velocityY) + 'px';
+                confetti.style.transform = `rotate(${rotation}deg)`;
+
+                if (currentY < window.innerHeight + 100) {
+                    requestAnimationFrame(animateConfetti);
+                } else {
+                    confetti.remove();
+                }
+            }
+
+            requestAnimationFrame(animateConfetti);
+        }
+
+        // Create balloons periodically
+        setInterval(createFloatingBalloon, 2000);
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('December 30, 2025 00:00:00').getTime();
+            function update() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+    
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+    
+            update();
+            setInterval(update, 1000);
+        }
+    
+        // Gallery Slider
+        function initializeGallery() {
+    const slides = document.querySelectorAll('.gallery-slide');
+    const nav = document.getElementById('galleryNav');
+    let currentIndex = 0;
+
+    // Create dots for navigation
+    slides.forEach((slide, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('gallery-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlides();
+            resetInterval(); // Reset interval on manual navigation
+        });
+        nav.appendChild(dot);
+    });
+
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+        });
+        const dots = document.querySelectorAll('.gallery-dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlides();
+    }
+
+    // Auto-slide interval
+    let slideInterval = setInterval(nextSlide, 2000);
+
+    // Reset interval when manually navigating
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 2000);
+    }
+
+    updateSlides();
+}
+    
+        // Blow Candles
+        function blowCake() {
+            setTimeout(() => {
+                alert('🎉 Happy Birthday to my amazing friend!✨ Nee smile enta bright ga untundho, alage nee heart kuda. Always stay as sweet and wonderful as you are! and stay as my best friend forever !                                                                                                                           -Rohee');
+            }, 300);
+        }
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburgerBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+
+
+    
+        // Initialize all functions
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            initializeGallery();
+        });
+    </script>
+    
